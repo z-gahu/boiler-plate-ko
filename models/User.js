@@ -85,6 +85,7 @@ userSchema.statics.findByToken = function (token, cb) {
 
     user.findOne({ _id: decoded, token: token }, function (err, user) {
       if (err) return cb(err);
+      cb(null, user);
     });
   });
 };
